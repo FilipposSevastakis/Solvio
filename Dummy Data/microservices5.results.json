@@ -1,0 +1,754 @@
+[{
+  "_id": {
+    "$oid": "66867faaee5a35fcea882b8d"
+  },
+  "problemID": {
+    "$oid": "66867fa6c1dc19a8a887e3ea"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-02T14:55:34.978Z"
+  },
+  "execTime": 0.117,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668680dfee5a35fcea882b8f"
+  },
+  "problemID": {
+    "$oid": "66867fecc1dc19a8a887e419"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-01T10:56:44.331Z"
+  },
+  "execTime": 94.308,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668680ebee5a35fcea882b91"
+  },
+  "problemID": {
+    "$oid": "668680c6c1dc19a8a887e5b0"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T11:00:58.994Z"
+  },
+  "execTime": 0.121,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66868182ee5a35fcea882b93"
+  },
+  "problemID": {
+    "$oid": "66868156c1dc19a8a887e5df"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T11:03:21.325Z"
+  },
+  "execTime": 8.982,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668681afee5a35fcea882b95"
+  },
+  "problemID": {
+    "$oid": "6686819ec1dc19a8a887e776"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-06-27T11:03:58.585Z"
+  },
+  "execTime": 0.113,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668684eb9ef1ff182fa88529"
+  },
+  "problemID": {
+    "$oid": "668681f3c1dc19a8a887e7a5"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-02T11:05:23.080Z"
+  },
+  "execTime": 31.816,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668684fc9ef1ff182fa8852b"
+  },
+  "problemID": {
+    "$oid": "66868211c1dc19a8a887e93c"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-06-27T11:18:18.309Z"
+  },
+  "execTime": 2.036,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66868d82f38113f00e76f198"
+  },
+  "problemID": {
+    "$oid": "668686b1c114ece0104eaed4"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T11:54:32.823Z"
+  },
+  "execTime": 9.08,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66868dd5f38113f00e76f19a"
+  },
+  "problemID": {
+    "$oid": "66868744c114ece0104eafa1"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-01T11:55:44.840Z"
+  },
+  "execTime": 8.288,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869bc618946a0392b4a9cf"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e3d7"
+  },
+  "userID": {
+    "$oid": "66867e3a1ce215c374776cea"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T12:55:34.626Z"
+  },
+  "execTime": 0.1,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869c0b18946a0392b4a9d1"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e3dd"
+  },
+  "userID": {
+    "$oid": "66867e3a1ce215c374776cea"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-06-27T12:58:42.853Z"
+  },
+  "execTime": 0.094,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869c2c18946a0392b4a9d3"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e3d4"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T12:57:16.670Z"
+  },
+  "execTime": 0.11,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869c4718946a0392b4a9d5"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e3da"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-06-30T12:27:59.128Z"
+  },
+  "execTime": 0.112,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869c5218946a0392b4a9d7"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e3e3"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-06-30T14:04:51.368Z"
+  },
+  "execTime": 0.172,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869c9218946a0392b4a9d9"
+  },
+  "problemID": {
+    "$oid": "66867c76c1dc19a8a887e3d1"
+  },
+  "userID": {
+    "$oid": "66867bbe1ce215c374776cbb"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-06-30T17:41:58.376Z"
+  },
+  "execTime": 0.112,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869c9218946a0392b4a9db"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e301"
+  },
+  "userID": {
+    "$oid": "66867bbe1ce215c374776cbb"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T12:58:58.571Z"
+  },
+  "execTime": 0.116,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869c9318946a0392b4a9dd"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e3e6"
+  },
+  "userID": {
+    "$oid": "66867bbe1ce215c374776cbb"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T12:58:59.052Z"
+  },
+  "execTime": 0.153,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869c9318946a0392b4a9df"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e3f3"
+  },
+  "userID": {
+    "$oid": "66767bbe1ce215c374776cbb"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T12:58:59.496Z"
+  },
+  "execTime": 0.136,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869caf18946a0392b4a9e1"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e3e0"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T12:59:27.561Z"
+  },
+  "execTime": 0.12,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66869cb018946a0392b4a9e3"
+  },
+  "problemID": {
+    "$oid": "66767c76c1dc19a8a887e3f0"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T12:59:27.947Z"
+  },
+  "execTime": 0.197,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6686a21a18946a0392b4aae4"
+  },
+  "problemID": {
+    "$oid": "6686a20a9737f07078c4050f"
+  },
+  "userID": {
+    "$oid": "6686a19756c6e39619f8589a"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T13:22:34.512Z"
+  },
+  "execTime": 0.11,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6686a51983f661e699fd09a5"
+  },
+  "problemID": {
+    "$oid": "6686a5177490fb137b9407ca"
+  },
+  "userID": {
+    "$oid": "6686a19756c6e39619f8589a"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T13:35:21.691Z"
+  },
+  "execTime": 0.109,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6686a687964e945cbe1ecb19"
+  },
+  "problemID": {
+    "$oid": "6686a66d887688baa4b1c330"
+  },
+  "userID": {
+    "$oid": "6686a19756c6e39619f8589a"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T13:41:26.770Z"
+  },
+  "execTime": 0.145,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799a8e96c6b06a28201664"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d91"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4da"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T16:10:40.754Z"
+  },
+  "execTime": 13.823,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799ab496c6b06a28201666"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d92"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4da"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T16:11:16.013Z"
+  },
+  "execTime": 15.963,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799ac496c6b06a28201668"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d93"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4da"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T16:11:33.900Z"
+  },
+  "execTime": 14.743,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4567"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d94"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4568"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-03T16:10:40.754Z"
+  },
+  "execTime": 13
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4569"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d95"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b456a"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T15:10:40.754Z"
+  },
+  "execTime": 5
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b456b"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d96"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b456c"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-05T14:10:40.754Z"
+  },
+  "execTime": 29
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b456d"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d97"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b456e"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-03T13:10:40.754Z"
+  },
+  "execTime": 7
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b456f"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d98"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4570"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T12:10:40.754Z"
+  },
+  "execTime": 2
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4571"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d99"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4572"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-05T11:10:40.754Z"
+  },
+  "execTime": 24
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4573"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d9a"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4574"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-03T10:10:40.754Z"
+  },
+  "execTime": 12
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4575"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d9b"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4576"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T09:10:40.754Z"
+  },
+  "execTime": 8
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4577"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d9c"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4578"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-05T08:10:40.754Z"
+  },
+  "execTime": 19
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b4579"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d9d"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b457a"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-03T07:10:40.754Z"
+  },
+  "execTime": 11
+},
+{
+  "_id": {
+    "$oid": "60c72b2f4f1a4c1d4c8b457b"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d9e"
+  },
+  "userID": {
+    "$oid": "60c72b2f4f1a4c1d4c8b457c"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T06:10:40.754Z"
+  },
+  "execTime": 21
+},
+{
+  "_id": {
+    "$oid": "66799a8e96c6b06a28201672"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24d9f"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4dc"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-01T16:15:10.222Z"
+  },
+  "execTime": 20.987,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799a8e96c6b06a28201673"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24da0"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4dd"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-02T11:30:25.333Z"
+  },
+  "execTime": 17.654,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799a8e96c6b06a28201674"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24da1"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4db"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-02T19:45:30.444Z"
+  },
+  "execTime": 29.876,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799a8e96c6b06a28201675"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24da2"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4dc"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-03T13:00:40.555Z"
+  },
+  "execTime": 8.765,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799a8e96c6b06a28201676"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24da3"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4dd"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-03T21:15:50.666Z"
+  },
+  "execTime": 23.45,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799a8e96c6b06a28201677"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24da4"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4db"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T10:20:00.777Z"
+  },
+  "execTime": 50.123,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799a8e96c6b06a28201678"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24da5"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4dc"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-04T18:35:15.888Z"
+  },
+  "execTime": 6.789,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66799a8e96c6b06a28201679"
+  },
+  "problemID": {
+    "$oid": "60d5f3c947f0b342d4c24da6"
+  },
+  "userID": {
+    "$oid": "66743f04c5a8a9b1d60ab4dd"
+  },
+  "model": null,
+  "date": {
+    "$date": "2024-07-05T09:50:30.999Z"
+  },
+  "execTime": 14.567,
+  "__v": 0
+}]

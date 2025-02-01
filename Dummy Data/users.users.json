@@ -1,0 +1,136 @@
+[{
+  "_id": {
+    "$oid": "66867b011ce215c374776c87"
+  },
+  "username": "Solvio",
+  "password": "not_a_valid_pwd",
+  "credits": 100,
+  "totalExecTime": 0,
+  "role": "admin",
+  "email": "solvio.app@gmail.com",
+  "google_access_token": "ya29.a0AXooCgt1QgELZlPRN04-yZSGn5uQnDhWgAKrSVRrxQAPqxL4AcpNdsa2GY0TIudbL5mD3VxWXEdJw2oQfGzpq0z5wFm4BiNe0h_BmDBcYizY8T7ukFk181KRcUcNZW6RgzNGpeysWyzZr8Nw1ENUo_Tj1ruhPgSaov4daCgYKAfYSARESFQHGX2MiwhQlEhf-YUZTseaUenVU2Q0171",
+  "picture": "https://lh3.googleusercontent.com/a/ACg8ocLNJSUKAV68jLMWeqi0nJQLkQAp8sjzcF1faoxoOvRfxgs58Hs=s96-c",
+  "joinedAt": {
+    "$date": "2024-07-04T10:35:45.970Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "username": "dg",
+  "password": "$2a$10$HeAddN3cNMtOBlPa2YSDnOO6pgmZ4FFAIUMYj6yKg/3kakbDtRt/2",
+  "credits": 144.803,
+  "totalExecTime": 51.537,
+  "role": "user",
+  "email": "",
+  "google_access_token": "",
+  "picture": "https://as1.ftcdn.net/v2/jpg/05/16/27/58/1000_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg",
+  "joinedAt": {
+    "$date": "2024-07-04T10:37:33.982Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66867ba51ce215c374776cad"
+  },
+  "username": "dgAdm",
+  "password": "$2a$10$5bk7trFZkqu8KXfT.qXctO6oxmG3gRu4HDKuAi2OMdxUN9v3p6aIS",
+  "credits": 100,
+  "totalExecTime": 0,
+  "role": "admin",
+  "email": "",
+  "google_access_token": "",
+  "picture": "https://as1.ftcdn.net/v2/jpg/05/16/27/58/1000_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg",
+  "joinedAt": {
+    "$date": "2024-07-04T10:38:29.276Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66867bbe1ce215c374776cbb"
+  },
+  "username": "dg2",
+  "password": "$2a$10$t0V/XQqVLxeYh/A.eWqU8uCS0MYARNLAYOs3skT4L623KoUKg7H4C",
+  "credits": 4.847,
+  "totalExecTime": 0.381,
+  "role": "user",
+  "email": "",
+  "google_access_token": "",
+  "picture": "https://as1.ftcdn.net/v2/jpg/05/16/27/58/1000_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg",
+  "joinedAt": {
+    "$date": "2024-07-04T10:38:54.264Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "username": "dg3",
+  "password": "$2a$10$x15S1LvLLljdXM6myXeFp.qkB9WBC4z2UM8fMTXRRdSIKykYtnmwe",
+  "credits": 200.828,
+  "totalExecTime": 44.03500000000001,
+  "role": "user",
+  "email": "",
+  "google_access_token": "",
+  "picture": "https://as1.ftcdn.net/v2/jpg/05/16/27/58/1000_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg",
+  "joinedAt": {
+    "$date": "2024-07-04T10:49:12.437Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66867e3a1ce215c374776cea"
+  },
+  "username": "dg4",
+  "password": "$2a$10$gouZG0PGkLTDatz8PVywIO7rs9ofX7KycTihQpRe2hrQI0njWWME2",
+  "credits": 98.906,
+  "totalExecTime": 0.194,
+  "role": "user",
+  "email": "",
+  "google_access_token": "",
+  "picture": "https://as1.ftcdn.net/v2/jpg/05/16/27/58/1000_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg",
+  "joinedAt": {
+    "$date": "2024-07-04T10:49:30.192Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6686a19756c6e39619f8589a"
+  },
+  "username": "PolLar",
+  "password": "not_a_valid_pwd",
+  "credits": 119.855,
+  "totalExecTime": 0.364,
+  "role": "user",
+  "email": "pollar.app2024@gmail.com",
+  "google_access_token": "ya29.a0AXooCguxbdmqSFOfv-Yi6PWgK6BqLi3vI4O3i7Ir6BhaW6K4Bz_ICfWMZYr8SXIgCKsuFK_kAQC2AORRKLIO5sIyrt9xyVam-XbQlBRucjdgb1iHy2eqSb7-4zm0Ws23CxYSB2aqOA1mjOkCWs82uO_tyRmy0-K62juyaCgYKAc4SARMSFQHGX2MijB0gkYIO2QtyUOBsL4N4ZA0171",
+  "picture": "https://lh3.googleusercontent.com/a/ACg8ocI1YzMJbiqZjqANkDxQKHOiAZkTZBcfZrHBJ1WfaLWEeOPIuH4=s96-c",
+  "joinedAt": {
+    "$date": "2024-07-04T13:20:23.759Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6686a4bde37a2fe617abc30b"
+  },
+  "username": "ddggg",
+  "password": "$2a$10$tmtJgxUY3ypdG/kBLLWXVe9SiDmtmEpy3iBriLnj5Dx0loz/aK6Ii",
+  "credits": 100,
+  "totalExecTime": 0,
+  "role": "user",
+  "email": "",
+  "google_access_token": "",
+  "picture": "https://as1.ftcdn.net/v2/jpg/05/16/27/58/1000_F_516275801_f3Fsp17x6HQK0xQgDQEELoTuERO4SsWV.jpg",
+  "joinedAt": {
+    "$date": "2024-07-04T13:33:49.126Z"
+  },
+  "__v": 0
+}]

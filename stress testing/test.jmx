@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group User">
+        <intProp name="ThreadGroup.num_threads">20</intProp>
+        <intProp name="ThreadGroup.ramp_time">20</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/auth/login</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;username&quot;:&quot;dg&quot;,&#xd;
+&quot;password&quot;:&quot;qw12!@&quot;}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">userID</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="View submissions" enabled="true">
+          <stringProp name="TestPlan.comments">View submissions</stringProp>
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/api/showSubmissions</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Submit Problem" enabled="true">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/api/submitProblem/submit</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;userID&quot;: &quot;${userID}&quot;,&#xd;
+  &quot;pythonScript&quot;: {&#xd;
+    &quot;script&quot;: &quot;import json\\r\\nimport os\\r\\nimport sys\\r\\nfrom ortools.constraint_solver import routing_enums_pb2\\r\\nfrom ortools.constraint_solver import pywrapcp\\r\\nfrom math import radians, sin, cos, sqrt, atan2\\r\\n\\r\\ndef haversine_distance(lat1, lon1, lat2, lon2):\\r\\n    \&quot;\&quot;\&quot;Calculate the great-circle distance between two points on the Earth&apos;s surface.\&quot;\&quot;\&quot;\\r\\n    # Convert latitude and longitude from degrees to radians\\r\\n    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])\\r\\n\\r\\n    # Haversine formula\\r\\n    dlat = lat2 - lat1\\r\\n    dlon = lon2 - lon1\\r\\n    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2\\r\\n    c = 2 * atan2(sqrt(a), sqrt(1 - a))\\r\\n    distance = 6371 * c  # Earth radius in kilometers\\r\\n    return int(round(1000 * distance))\\r\\n\\r\\ndef calculate_distance_matrix(locations):\\r\\n    \&quot;\&quot;\&quot;Calculate distance matrix based on Manhattan distance.\&quot;\&quot;\&quot;\\r\\n    num_locations = len(locations)\\r\\n    distance_matrix = [[0]*num_locations for _ in range(num_locations)]\\r\\n\\r\\n    for i in range(num_locations):\\r\\n        for j in range(num_locations):\\r\\n            lat1, lon1 = locations[i][\&quot;Latitude\&quot;], locations[i][\&quot;Longitude\&quot;]\\r\\n            lat2, lon2 = locations[j][\&quot;Latitude\&quot;], locations[j][\&quot;Longitude\&quot;]\\r\\n            distance_matrix[i][j] = haversine_distance(lat1, lon1, lat2, lon2)\\r\\n    return distance_matrix\\r\\n\\r\\ndef create_data_model(locations, num_vehicles, depot):\\r\\n    \&quot;\&quot;\&quot;Stores the data for the problem.\&quot;\&quot;\&quot;\\r\\n    data = {}\\r\\n    data[\&quot;distance_matrix\&quot;] = calculate_distance_matrix(locations)\\r\\n    data[\&quot;num_vehicles\&quot;] = num_vehicles\\r\\n    data[\&quot;depot\&quot;] = depot\\r\\n    return data\\r\\n\\r\\ndef print_solution(data, manager, routing, solution):\\r\\n    \&quot;\&quot;\&quot;Prints solution on console.\&quot;\&quot;\&quot;\\r\\n    print(f\&quot;Objective: {solution.ObjectiveValue()}\&quot;)\\r\\n    max_route_distance = 0\\r\\n    for vehicle_id in range(data[\&quot;num_vehicles\&quot;]):\\r\\n        index = routing.Start(vehicle_id)\\r\\n        plan_output = f\&quot;Route for vehicle {vehicle_id}:\\n\&quot;\\r\\n        route_distance = 0\\r\\n        while not routing.IsEnd(index):\\r\\n            plan_output += f\&quot; {manager.IndexToNode(index)} -&gt; \&quot;\\r\\n            previous_index = index\\r\\n            index = solution.Value(routing.NextVar(index))\\r\\n            route_distance += routing.GetArcCostForVehicle(\\r\\n                previous_index, index, vehicle_id\\r\\n            )\\r\\n        plan_output += f\&quot;{manager.IndexToNode(index)}\\n\&quot;\\r\\n        plan_output += f\&quot;Distance of the route: {route_distance}m\\n\&quot;\\r\\n        print(plan_output)\\r\\n        max_route_distance = max(route_distance, max_route_distance)\\r\\n    print(f\&quot;Maximum of the route distances: {max_route_distance}m\&quot;)\\r\\n    \\r\\ndef read_json_file(file_path):\\r\\n    \&quot;\&quot;\&quot;Read JSON file.\&quot;\&quot;\&quot;\\r\\n    with open(file_path, \&quot;r\&quot;) as file:\\r\\n        data = json.load(file)\\r\\n        return data.get(\&quot;Locations\&quot;, [])  # Access the \&quot;Locations\&quot; array\\r\\n\\r\\ndef main():\\r\\n    \&quot;\&quot;\&quot;Entry point of the program.\&quot;\&quot;\&quot;\\r\\n    if len(sys.argv) != 5:\\r\\n        print(\&quot;Wrong number of args.\\nUsage: python &lt;script_name.py&gt; &lt;input_file.json&gt; &lt;num_vehicles&gt; &lt;depot&gt; &lt;max_distance&gt;\&quot;)\\r\\n        sys.exit(1)\\r\\n\\r\\n    input_file = os.path.abspath(sys.argv[1])  # Get absolute path\\r\\n    num_vehicles = int(sys.argv[2])\\r\\n    depot = int(sys.argv[3])\\r\\n    max_distance = int(sys.argv[4])\\r\\n    # Read JSON file\\r\\n    locations = read_json_file(input_file)\\r\\n\\r\\n    # Instantiate the data problem.\\r\\n    data = create_data_model(locations, num_vehicles, depot)\\r\\n\\r\\n# Create the routing index manager.\\r\\n    manager = pywrapcp.RoutingIndexManager(\\r\\n        len(data[\&quot;distance_matrix\&quot;]), data[\&quot;num_vehicles\&quot;], data[\&quot;depot\&quot;]\\r\\n    )\\r\\n\\r\\n    # Create Routing Model.\\r\\n    routing = pywrapcp.RoutingModel(manager)\\r\\n\\r\\n    # Create and register a transit callback.\\r\\n    def distance_callback(from_index, to_index):\\r\\n        \&quot;\&quot;\&quot;Returns the distance between the two nodes.\&quot;\&quot;\&quot;\\r\\n        # Convert from routing variable Index to distance matrix NodeIndex.\\r\\n        from_node = manager.IndexToNode(from_index)\\r\\n        to_node = manager.IndexToNode(to_index)\\r\\n        return data[\&quot;distance_matrix\&quot;][from_node][to_node]\\r\\n\\r\\n    transit_callback_index = routing.RegisterTransitCallback(distance_callback)\\r\\n\\r\\n    # Define cost of each arc.\\r\\n    routing.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)\\r\\n\\r\\n    # Add Distance constraint.\\r\\n    dimension_name = \&quot;Distance\&quot;\\r\\n    routing.AddDimension(\\r\\n        transit_callback_index,\\r\\n        0,  # no slack\\r\\n        max_distance,  # vehicle maximum travel distance\\r\\n        True,  # start cumul to zero\\r\\n        dimension_name,\\r\\n    )\\r\\n    distance_dimension = routing.GetDimensionOrDie(dimension_name)\\r\\n    distance_dimension.SetGlobalSpanCostCoefficient(100)\\r\\n\\r\\n    # Setting first solution heuristic.\\r\\n    search_parameters = pywrapcp.DefaultRoutingSearchParameters()\\r\\n    search_parameters.first_solution_strategy = (\\r\\n        routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC\\r\\n    )\\r\\n\\r\\n    # Solve the problem.\\r\\n    solution = routing.SolveWithParameters(search_parameters)\\r\\n\\r\\n    # Print solution on console.\\r\\n    if solution:\\r\\n        print_solution(data, manager, routing, solution)\\r\\n    else:\\r\\n        print(\&quot;No solution found !\&quot;)\\r\\n\\r\\nif __name__ == \&quot;__main__\&quot;:\\r\\n    main()\\r\\n&quot;,&#xd;
+    &quot;info&quot;: &quot;vrpSolver.py (4.98 KB)&quot;&#xd;
+  },&#xd;
+  &quot;inputDataFile&quot;: {&#xd;
+    &quot;content&quot;: { &quot;Locations&quot;: [ ] },&#xd;
+    &quot;info&quot;: &quot;locations_20.json (1.82 KB)&quot;&#xd;
+  },&#xd;
+  &quot;status&quot;: &quot;ready&quot;,&#xd;
+  &quot;extraParams&quot;: { &quot;numVehicles&quot;: &quot;5&quot;, &quot;depot&quot;: &quot;0&quot;, &quot;maxDistance&quot;: &quot;12000&quot; },&#xd;
+  &quot;model&quot;: &quot;Model 1 : Vehicle Routing Problem (VRP)&quot;,&#xd;
+  &quot;name&quot;: &quot;problem249211141&quot;&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">problemID</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.problem._id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="View problem" enabled="true">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.path">/api/submitProblem/getProblemInfo/${problemID}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">log.info(&quot;The value of problemID is: &quot; + vars.get(&quot;problemID&quot;))</stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Edit problem" enabled="true">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/api/submitProblem/updateSubmission</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;userID&quot;: &quot;${userID}&quot;,&#xd;
+  &quot;pythonScript&quot;: {&#xd;
+    &quot;script&quot;: &quot;import json\\r\\nimport os\\r\\nimport sys\\r\\nfrom ortools.constraint_solver import routing_enums_pb2\\r\\nfrom ortools.constraint_solver import pywrapcp\\r\\nfrom math import radians, sin, cos, sqrt, atan2\\r\\n\\r\\ndef haversine_distance(lat1, lon1, lat2, lon2):\\r\\n    \&quot;\&quot;\&quot;Calculate the great-circle distance between two points on the Earth&apos;s surface.\&quot;\&quot;\&quot;\\r\\n    # Convert latitude and longitude from degrees to radians\\r\\n    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])\\r\\n\\r\\n    # Haversine formula\\r\\n    dlat = lat2 - lat1\\r\\n    dlon = lon2 - lon1\\r\\n    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2\\r\\n    c = 2 * atan2(sqrt(a), sqrt(1 - a))\\r\\n    distance = 6371 * c  # Earth radius in kilometers\\r\\n    return int(round(1000 * distance))\\r\\n\\r\\ndef calculate_distance_matrix(locations):\\r\\n    \&quot;\&quot;\&quot;Calculate distance matrix based on Manhattan distance.\&quot;\&quot;\&quot;\\r\\n    num_locations = len(locations)\\r\\n    distance_matrix = [[0]*num_locations for _ in range(num_locations)]\\r\\n\\r\\n    for i in range(num_locations):\\r\\n        for j in range(num_locations):\\r\\n            lat1, lon1 = locations[i][\&quot;Latitude\&quot;], locations[i][\&quot;Longitude\&quot;]\\r\\n            lat2, lon2 = locations[j][\&quot;Latitude\&quot;], locations[j][\&quot;Longitude\&quot;]\\r\\n            distance_matrix[i][j] = haversine_distance(lat1, lon1, lat2, lon2)\\r\\n    return distance_matrix\\r\\n\\r\\ndef create_data_model(locations, num_vehicles, depot):\\r\\n    \&quot;\&quot;\&quot;Stores the data for the problem.\&quot;\&quot;\&quot;\\r\\n    data = {}\\r\\n    data[\&quot;distance_matrix\&quot;] = calculate_distance_matrix(locations)\\r\\n    data[\&quot;num_vehicles\&quot;] = num_vehicles\\r\\n    data[\&quot;depot\&quot;] = depot\\r\\n    return data\\r\\n\\r\\ndef print_solution(data, manager, routing, solution):\\r\\n    \&quot;\&quot;\&quot;Prints solution on console.\&quot;\&quot;\&quot;\\r\\n    print(f\&quot;Objective: {solution.ObjectiveValue()}\&quot;)\\r\\n    max_route_distance = 0\\r\\n    for vehicle_id in range(data[\&quot;num_vehicles\&quot;]):\\r\\n        index = routing.Start(vehicle_id)\\r\\n        plan_output = f\&quot;Route for vehicle {vehicle_id}:\\\n\&quot;\\r\\n        route_distance = 0\\r\\n        while not routing.IsEnd(index):\\r\\n            plan_output += f\&quot; {manager.IndexToNode(index)} -&gt; \&quot;\\r\\n            previous_index = index\\r\\n            index = solution.Value(routing.NextVar(index))\\r\\n            route_distance += routing.GetArcCostForVehicle(\\r\\n                previous_index, index, vehicle_id\\r\\n            )\\r\\n        plan_output += f\&quot;{manager.IndexToNode(index)}\\\n\&quot;\\r\\n        plan_output += f\&quot;Distance of the route: {route_distance}m\\\n\&quot;\\r\\n        print(plan_output)\\r\\n        max_route_distance = max(route_distance, max_route_distance)\\r\\n    print(f\&quot;Maximum of the route distances: {max_route_distance}m\&quot;)\\r\\n    \\r\\ndef read_json_file(file_path):\\r\\n    \&quot;\&quot;\&quot;Read JSON file.\&quot;\&quot;\&quot;\\r\\n    with open(file_path, \&quot;r\&quot;) as file:\\r\\n        data = json.load(file)\\r\\n        return data.get(\&quot;Locations\&quot;, [])  # Access the \&quot;Locations\&quot; array\\r\\n\\r\\ndef main():\\r\\n    \&quot;\&quot;\&quot;Entry point of the program.\&quot;\&quot;\&quot;\\r\\n    if len(sys.argv) != 5:\\r\\n        print(\&quot;Wrong number of args.\\\nUsage: python &lt;script_name.py&gt; &lt;input_file.json&gt; &lt;num_vehicles&gt; &lt;depot&gt; &lt;max_distance&gt;\&quot;)\\r\\n        sys.exit(1)\\r\\n\\r\\n    input_file = os.path.abspath(sys.argv[1])  # Get absolute path\\r\\n    num_vehicles = int(sys.argv[2])\\r\\n    depot = int(sys.argv[3])\\r\\n    max_distance = int(sys.argv[4])\\r\\n    # Read JSON file\\r\\n    locations = read_json_file(input_file)\\r\\n\\r\\n    # Instantiate the data problem.\\r\\n    data = create_data_model(locations, num_vehicles, depot)\\r\\n\\r\\n# Create the routing index manager.\\r\\n    manager = pywrapcp.RoutingIndexManager(\\r\\n        len(data[\&quot;distance_matrix\&quot;]), data[\&quot;num_vehicles\&quot;], data[\&quot;depot\&quot;]\\r\\n    )\\r\\n\\r\\n    # Create Routing Model.\\r\\n    routing = pywrapcp.RoutingModel(manager)\\r\\n\\r\\n    # Create and register a transit callback.\\r\\n    def distance_callback(from_index, to_index):\\r\\n        \&quot;\&quot;\&quot;Returns the distance between the two nodes.\&quot;\&quot;\&quot;\\r\\n        # Convert from routing variable Index to distance matrix NodeIndex.\\r\\n        from_node = manager.IndexToNode(from_index)\\r\\n        to_node = manager.IndexToNode(to_index)\\r\\n        return data[\&quot;distance_matrix\&quot;][from_node][to_node]\\r\\n\\r\\n    transit_callback_index = routing.RegisterTransitCallback(distance_callback)\\r\\n\\r\\n    # Define cost of each arc.\\r\\n    routing.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)\\r\\n\\r\\n    # Add Distance constraint.\\r\\n    dimension_name = \&quot;Distance\&quot;\\r\\n    routing.AddDimension(\\r\\n        transit_callback_index,\\r\\n        0,  # no slack\\r\\n        max_distance,  # vehicle maximum travel distance\\r\\n        True,  # start cumul to zero\\r\\n        dimension_name,\\r\\n    )\\r\\n    distance_dimension = routing.GetDimensionOrDie(dimension_name)\\r\\n    distance_dimension.SetGlobalSpanCostCoefficient(100)\\r\\n\\r\\n    # Setting first solution heuristic.\\r\\n    search_parameters = pywrapcp.DefaultRoutingSearchParameters()\\r\\n    search_parameters.first_solution_strategy = (\\r\\n        routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC\\r\\n    )\\r\\n\\r\\n    # Solve the problem.\\r\\n    solution = routing.SolveWithParameters(search_parameters)\\r\\n\\r\\n    # Print solution on console.\\r\\n    if solution:\\r\\n        print_solution(data, manager, routing, solution)\\r\\n    else:\\r\\n        print(\&quot;No solution found !\&quot;)\\r\\n\\r\\nif __name__ == \&quot;__main__\&quot;:\\r\\n    main()\\r\\n&quot;,&#xd;
+    &quot;info&quot;: &quot;vrpSolver.py (4.98 KB)&quot;&#xd;
+  },&#xd;
+  &quot;inputDataFile&quot;: {&#xd;
+    &quot;content&quot;: { &quot;Locations&quot;: [&#xd;
+    {&quot;Latitude&quot;: &quot;37.99983328183838&quot;, &quot;Longitude&quot;: &quot;23.74317714798427&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d0a&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.966783510525985&quot;, &quot;Longitude&quot;: &quot;23.778605533642235&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d0b&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.9990464764814&quot;, &quot;Longitude&quot;: &quot;23.773251398190194&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d0c&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.974070236340665&quot;, &quot;Longitude&quot;: &quot;23.737519890565082&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d0d&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.99763705556787&quot;, &quot;Longitude&quot;: &quot;23.76632669971703&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d0e&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.987158185269436&quot;, &quot;Longitude&quot;: &quot;23.760040398809927&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d0f&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.96565952612894&quot;, &quot;Longitude&quot;: &quot;23.78044816563277&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d10&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;38.00816194011881&quot;, &quot;Longitude&quot;: &quot;23.743726736188382&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d11&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.983474656462256&quot;, &quot;Longitude&quot;: &quot;23.73256864917707&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d12&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.96362413346355&quot;, &quot;Longitude&quot;: &quot;23.77785820154608&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d13&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.96581060070882&quot;, &quot;Longitude&quot;: &quot;23.72133687257313&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d14&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.97624293546459&quot;, &quot;Longitude&quot;: &quot;23.740238201740137&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d15&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;38.00566809733227&quot;, &quot;Longitude&quot;: &quot;23.728089082692076&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d16&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;38.00132387722171&quot;, &quot;Longitude&quot;: &quot;23.75830400972441&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d17&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.96320247915091&quot;, &quot;Longitude&quot;: &quot;23.785174964462342&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d18&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.965357705819066&quot;, &quot;Longitude&quot;: &quot;23.74320004992697&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d19&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.9692186084866&quot;, &quot;Longitude&quot;: &quot;23.785110852487332&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d1a&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.98271697637991&quot;, &quot;Longitude&quot;: &quot;23.73542153051244&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d1b&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.97230013076112&quot;, &quot;Longitude&quot;: &quot;23.788423933330492&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d1c&quot;},&#xd;
+    {&quot;Latitude&quot;: &quot;37.97827880279073&quot;, &quot;Longitude&quot;: &quot;23.75884558944574&quot;, &quot;_id&quot;: &quot;6672becd94e5ea44e7b86d1d&quot;}&#xd;
+] },&#xd;
+    &quot;info&quot;: &quot;locations_20.json (1.82 KB)&quot;&#xd;
+  },&#xd;
+  &quot;status&quot;: &quot;ready&quot;,&#xd;
+  &quot;extraParams&quot;: { &quot;numVehicles&quot;: &quot;5&quot;, &quot;depot&quot;: &quot;0&quot;, &quot;maxDistance&quot;: &quot;13000&quot; },&#xd;
+  &quot;problemId&quot;: &quot;${problemID}&quot;,&#xd;
+  &quot;name&quot;: &quot;newName&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Run problem" enabled="true">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/api/runproblem</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;problemID&quot;:&quot;${problemID}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="View Results" enabled="true">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/api/getResults</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${problemID}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">id</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">10000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group Admin" enabled="true">
+        <intProp name="ThreadGroup.num_threads">1000</intProp>
+        <intProp name="ThreadGroup.ramp_time">5</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/auth/login</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;username&quot;:&quot;dgAdm&quot;,&#xd;
+&quot;password&quot;:&quot;qw12!@&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">userID</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="View all submissions">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/api/admin/showSubmissions</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="View problem">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/api/submitProblem/getProblemInfo/66767c76c1dc19a8a887e3e6</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Show user info">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/auth/getUserDetails/66867bbe1ce215c374776cbb</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="View statistics">
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/api/admin/viewStatistics</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

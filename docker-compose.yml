@@ -1,0 +1,150 @@
+version: "3"
+services:
+  frontend:
+    build: "./frontend"
+    ports:
+      - "3000:3000"
+    environment:
+      - PAYPAL_CLIENT_ID=Abm-etelbBB8P8lIP1heUZvy_V4gg1Qzi6emTTY2Nv5_hWy168dVbmDxQd6ge76YcmNobwgL58xvKWlH
+      - PAYPAL_CLIENT_SECRET=EHuiR15AZ8YvD3NJevfdkAe8SLhUzrK707uBVg41Qv2o1yhty_ayUaYrqGkmleSCiTPvFonoLWMXQ5gv
+
+  submitproblem:
+    build: "./submitproblem"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+      - rabbitmqquestions
+    environment:
+      - MONGO_DB_URI=mongodb://db/microservices1
+      - RABBITMQ_QUESTIONS_URL=amqp://guest:guest@rabbitmqquestions:5672/
+      - EXCHANGE_NAME=questionsExchange
+      - JWT_KEY="arandomjwtkey"
+
+  usersmanagement:
+    build: "./usersmanagement"
+    ports:
+      - "5001:5000"
+    depends_on:
+      - db
+      - rabbitmqanswers
+    environment:
+      - MONGO_DB_URI=mongodb://db/users
+      - JWT_KEY="arandomjwtkey"
+      - CLIENT_ID=1089589254674-d22lmgcff5fm2iivoiuiumilvub9t1ep.apps.googleusercontent.com
+      - CLIENT_SECRET=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
+      - EXCHANGE_NAME_ANSWERS=answersExchange
+      - QUEUE_NAME_USERS_MANAGEMENT=UsersManagementQueue
+      - RABBITMQ_ANSWERS_URL=amqp://guest:guest@rabbitmqanswers:5672/
+      - PAYPAL_CLIENT_ID=Abm-etelbBB8P8lIP1heUZvy_V4gg1Qzi6emTTY2Nv5_hWy168dVbmDxQd6ge76YcmNobwgL58xvKWlH
+      - PAYPAL_CLIENT_SECRET=EHuiR15AZ8YvD3NJevfdkAe8SLhUzrK707uBVg41Qv2o1yhty_ayUaYrqGkmleSCiTPvFonoLWMXQ5gv
+
+  showsubmissions:
+    build: "./showsubmissions"
+    ports:
+      - "5002:5000"
+    depends_on:
+      - db
+      - rabbitmqquestions
+    environment:
+      - MONGO_DB_URI=mongodb://db/microservices2
+      - RABBITMQ_QUESTIONS_URL=amqp://guest:guest@rabbitmqquestions:5672/
+      - EXCHANGE_NAME=questionsExchange
+      - QUEUE_SHOW_SUBMISSIONS=showSubmissionsQueue
+      - RABBITMQ_ANSWERS_URL=amqp://guest:guest@rabbitmqanswers:5672/
+      - EXCHANGE_NAME_ANSWERS=answersExchange
+      - QUEUE_VIEW_RESULTS=viewResultsQueue2
+      - JWT_KEY="arandomjwtkey"
+
+  solversproxy:
+    build: "./solversproxy"
+    ports:
+      - "5003:5000"
+    depends_on:
+      - db
+      - rabbitmqquestions
+      - rabbitmqanswers
+    environment:
+      - MONGO_DB_URI=mongodb://db/microservices3
+      - RABBITMQ_QUESTIONS_URL=amqp://guest:guest@rabbitmqquestions:5672/
+      - RABBITMQ_ANSWERS_URL=amqp://guest:guest@rabbitmqanswers:5672/
+      - QUEUE_NAME=ProxyQueue
+      - EXCHANGE_NAME_QUESTIONS=questionsExchange
+      - EXCHANGE_NAME_ANSWERS=answersExchange
+
+  solver:
+    build: "./solver"
+    ports:
+      - "5004:5000"
+
+  emailservice:
+    build: "./emailservice"
+    ports:
+      - "5005:5000"
+    depends_on:
+      - db
+      - rabbitmqanswers
+    environment:
+      - MONGO_DB_URI=mongodb://db/googleusers
+      - EXCHANGE_NAME_ANSWERS=answersExchange
+      - QUEUE_NAME_EMAIL_SERVICE=EmailServiceQueue
+      - RABBITMQ_ANSWERS_URL=amqp://guest:guest@rabbitmqanswers:5672/
+      - APP_PWD=jdxbyyngpnvrzluh
+
+  showresults:
+    build: "./showresults"
+    ports:
+      - "5006:5000"
+    depends_on:
+      - db
+      - rabbitmqanswers
+    environment:
+      - MONGO_DB_URI=mongodb://db/microservices4
+      - RABBITMQ_ANSWERS_URL=amqp://guest:guest@rabbitmqanswers:5672/
+      - EXCHANGE_NAME_ANSWERS=answersExchange
+      - QUEUE_VIEW_RESULTS=viewResultsQueue
+      - JWT_KEY="arandomjwtkey"
+
+  viewstatistics:
+    build: "./viewstatistics"
+    ports:
+      - "5007:5000"
+    depends_on:
+      - db
+      - rabbitmqanswers
+    environment:
+      - MONGO_DB_URI=mongodb://db/microservices5
+      - RABBITMQ_ANSWERS_URL=amqp://guest:guest@rabbitmqanswers:5672/
+      - EXCHANGE_NAME=answersExchange
+      - QUEUE_NAME=viewstatisticsQueue
+
+  rabbitmqquestions:
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 25672:25672
+
+  rabbitmqanswers:
+    image: rabbitmq:3-management
+    ports:
+      - 5673:5672
+      - 15673:15672
+      - 25673:25672
+
+  db:
+    image: mongo
+    ports:
+      - "27016:27017"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend/public:/srv/www/static
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - submitproblem
+      - usersmanagement
+      - showsubmissions

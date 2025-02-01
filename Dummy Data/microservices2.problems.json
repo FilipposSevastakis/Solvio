@@ -1,0 +1,437 @@
+[{
+  "_id": {
+    "$oid": "66867c76c1dc19a8a887e3d1"
+  },
+  "userID": {
+    "$oid": "66867bbe1ce215c374776cbb"
+  },
+  "name": "hello",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-06-30T17:41:58.376Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-30T17:41:58.376Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66867fa6c1dc19a8a887e3ea"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "name": "prob1",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-02T14:55:34.978Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T14:55:34.978Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66867fecc1dc19a8a887e419"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "name": "probhaha",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-01T10:56:44.331Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-01T10:56:44.331Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668680c6c1dc19a8a887e5b0"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "name": "prob3",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-02T11:00:22.496Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T11:00:22.499Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66868156c1dc19a8a887e5df"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "name": "probThanos",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-02T11:02:46.989Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T11:02:47.005Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6686819ec1dc19a8a887e776"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "name": "probJimmy",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-06-27T11:03:58.585Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-27T11:03:58.585Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668681f3c1dc19a8a887e7a5"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "name": "probFelipe",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-02T11:05:23.080Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T11:05:23.080Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66868211c1dc19a8a887e93c"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "name": "probKati",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-06-27T11:05:53.172Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-27T11:05:53.174Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668686b1c114ece0104eaed4"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "name": "GeiaSas",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-06-29T11:25:37.754Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-29T11:25:37.765Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66868744c114ece0104eafa1"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "name": "MediumProblem2",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-01T11:28:04.120Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-01T11:55:44.840Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e301"
+  },
+  "userID": {
+    "$oid": "66867bbe1ce215c374776cbb"
+  },
+  "name": "hello",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-04T10:41:58.368Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-04T10:41:58.376Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e3d4"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "name": "world",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-04T11:15:29.468Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-04T11:15:29.478Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e3d7"
+  },
+  "userID": {
+    "$oid": "66867e3a1ce215c374776cea"
+  },
+  "name": "example",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-04T11:52:13.724Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-04T11:52:13.732Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e3da"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "name": "test",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-06-30T12:27:59.128Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-30T12:27:59.128Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e3dd"
+  },
+  "userID": {
+    "$oid": "66867e3a1ce215c374776cea"
+  },
+  "name": "simulation",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-06-27T12:58:42.853Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-27T12:58:42.853Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e3e0"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "name": "optimization",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-02T14:31:18.597Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-02T14:31:18.605Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e3e3"
+  },
+  "userID": {
+    "$oid": "66867e281ce215c374776ce0"
+  },
+  "name": "analysis",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-06-30T14:04:51.368Z"
+  },
+  "updatedAt": {
+    "$date": "2024-06-30T14:04:51.368Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e3e6"
+  },
+  "userID": {
+    "$oid": "66867bbe1ce215c374776cbb"
+  },
+  "name": "prediction",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-04T14:37:24.024Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-04T14:37:24.032Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e3f0"
+  },
+  "userID": {
+    "$oid": "66867b6d1ce215c374776ca3"
+  },
+  "name": "experiment",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-04T15:10:01.789Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-04T15:10:01.797Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "66767c76c1dc19a8a887e3f3"
+  },
+  "userID": {
+    "$oid": "66867bbe1ce215c374776cbb"
+  },
+  "name": "prototype",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-04T15:10:01.789Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-04T15:10:01.797Z"
+  },
+  "__v": 0,
+  "allowToShowResults": "true"
+},
+{
+  "_id": {
+    "$oid": "6686a5087490fb137b9407b1"
+  },
+  "userID": {
+    "$oid": "6686a19756c6e39619f8589a"
+  },
+  "name": "problem2677094221",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "ready",
+  "createdAt": {
+    "$date": "2024-07-04T13:35:04.207Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-04T13:35:04.217Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6686a5177490fb137b9407ca"
+  },
+  "userID": {
+    "$oid": "6686a19756c6e39619f8589a"
+  },
+  "name": "problem7946727131",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "finished",
+  "createdAt": {
+    "$date": "2024-07-04T13:35:19.362Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-04T13:35:19.367Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6686a52a7490fb137b9407f9"
+  },
+  "userID": {
+    "$oid": "6686a19756c6e39619f8589a"
+  },
+  "name": "problem643166701",
+  "model": "Model 1 : Vehicle Routing Problem (VRP)",
+  "status": "ready",
+  "createdAt": {
+    "$date": "2024-07-04T13:35:38.930Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-04T13:35:38.933Z"
+  },
+  "allowToShowResults": "true",
+  "__v": 0
+}]

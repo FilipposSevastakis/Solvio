@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "668698939ec514507762abb5"
+  },
+  "username": "Solvio",
+  "email": "solvio.app@gmail.com",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6686a19756c6e39619f8589a"
+  },
+  "username": "PolLar",
+  "email": "pollar.app2024@gmail.com",
+  "__v": 0
+}]

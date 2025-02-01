@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.money {
+  table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: #fcda9c;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    border-right: 1px solid #ddd;
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: #faf6de;
+  }
+
+  td {
+    border-right: 1px solid #ddd;
+  }
+}
+
+.app {
+  .container {
+  }
+}
