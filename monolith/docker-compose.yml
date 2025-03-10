@@ -1,0 +1,46 @@
+version: "3"
+services:
+  frontend:
+    build: "./frontend"
+    ports:
+      - "3000:3000"
+    environment:
+      - PAYPAL_CLIENT_ID=Abm-etelbBB8P8lIP1heUZvy_V4gg1Qzi6emTTY2Nv5_hWy168dVbmDxQd6ge76YcmNobwgL58xvKWlH
+      - PAYPAL_CLIENT_SECRET=EHuiR15AZ8YvD3NJevfdkAe8SLhUzrK707uBVg41Qv2o1yhty_ayUaYrqGkmleSCiTPvFonoLWMXQ5gv
+
+  backend:
+    build: "./backend"
+    ports:
+      - "5000:5000"
+      - "5001:5000"
+    depends_on:
+      - db
+    environment:
+      - MONGO_DB_URI=mongodb://db/backend
+      - JWT_KEY="arandomjwtkey"
+      - PAYPAL_CLIENT_ID=Abm-etelbBB8P8lIP1heUZvy_V4gg1Qzi6emTTY2Nv5_hWy168dVbmDxQd6ge76YcmNobwgL58xvKWlH
+      - PAYPAL_CLIENT_SECRET=EHuiR15AZ8YvD3NJevfdkAe8SLhUzrK707uBVg41Qv2o1yhty_ayUaYrqGkmleSCiTPvFonoLWMXQ5gv
+      - CLIENT_ID=1089589254674-d22lmgcff5fm2iivoiuiumilvub9t1ep.apps.googleusercontent.com
+      - CLIENT_SECRET=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
+      - APP_PWD=jdxbyyngpnvrzluh
+
+  solver:
+    build: "./solver"
+    ports:
+      - "5004:5000"
+
+  db:
+    image: mongo
+    ports:
+      - "27016:27017"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend/public:/srv/www/static
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
+      - backend
